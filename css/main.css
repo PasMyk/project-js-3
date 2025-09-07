@@ -1,0 +1,397 @@
+.nav-link {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.nav-item {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.welcome-text {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+}
+
+.username {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 21px 0px 21px 0px;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  gap: 81px;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  gap: 50px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 50px;
+}
+
+.game__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  padding: 36px 0px 36px 0px;
+}
+
+.game {
+  border-top: 1px solid rgb(0, 0, 0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  border: none;
+}
+
+input,
+button {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 1090px;
+  margin: 0 auto;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 36px 0px 0px 0px;
+}
+
+.welcome-title {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  padding: 0px 0px 36px 0px;
+}
+
+.game__title {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.game__input {
+  color: rgb(126, 126, 126);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.game__result {
+  color: rgb(3, 153, 0);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+}
+
+.game__button {
+  color: rgb(255, 255, 255);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.scorebooard__title,
+.scorebooard__line {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.team__name {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.team__work {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.team__title {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.team__photo {
+  border-radius: 20px;
+  background: rgb(217, 217, 217);
+}
+
+.scientists__item {
+  border-radius: 20px;
+  background: rgb(217, 217, 217);
+}
+
+.game__content {
+  display: flex;
+  gap: 150px;
+  align-items: center;
+}
+
+.game__button {
+  padding: 10px;
+  width: 35px;
+  height: 35px;
+  border-radius: 0px 20px 20px 0px;
+  background: rgb(0, 0, 0);
+}
+
+.game__input-group {
+  display: flex;
+  align-items: center;
+}
+
+.game__input {
+  background: rgb(215, 215, 215);
+  padding: 10px;
+  width: 215px;
+  height: 35px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  outline: none;
+}
+
+.change-size-first {
+  width: 180px;
+}
+
+.change-size-second {
+  width: 115px;
+}
+
+.change-size-content {
+  display: flex;
+  gap: 200px;
+  align-items: center;
+}
+
+.change-rps-content {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+
+.game__computer-result {
+  border-radius: 20px;
+  background: rgb(0, 0, 0);
+  padding: 10px 20px 10px 20px;
+  color: rgb(255, 255, 255);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.rps__icon {
+  border-radius: 20px;
+  background: rgb(0, 0, 0);
+}
+
+.rps__choices {
+  display: flex;
+  gap: 38px;
+}
+
+.game__play {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: flex-end;
+  width: 50%;
+}
+
+.rps-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0px;
+}
+
+.rps__scoreboard {
+  margin-left: 105px;
+}
+
+.calc__op {
+  border-radius: 20px;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
+  background: rgb(0, 0, 0);
+  padding: 5px 10px 5px 10px;
+  color: rgb(255, 255, 255);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.calc__operators {
+  display: flex;
+  gap: 10px;
+}
+
+.calc__row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.change-input-first-calculator {
+  border-radius: 20px;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
+  background: rgb(215, 215, 215);
+}
+
+.change-width-input-calculator-first {
+  width: 135px;
+}
+
+.change-width-input-calculator-second {
+  width: 118px;
+}
+
+.calc__equals {
+  border-radius: 20px;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
+  background: rgb(0, 0, 0);
+  width: 27px;
+  padding: 5px 10px 5px 10px;
+  color: rgb(255, 255, 255);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.calculator-content {
+  display: flex;
+  gap: 0px;
+}

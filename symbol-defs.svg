@@ -1,0 +1,14 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-switcher" viewBox="0 0 32 32">
+<path fill="#7a7a7a" style="fill: var(--color1, #7a7a7a)" d="M8 8h16c4.418 0 8 3.582 8 8s-3.582 8-8 8h-16c-4.418 0-8-3.582-8-8s3.582-8 8-8z"></path>
+<path fill="#fff" style="fill: var(--color2, #fff)" d="M16.4 16c0 4.418-3.671 8-8.2 8s-8.2-3.582-8.2-8c0-4.418 3.671-8 8.2-8s8.2 3.582 8.2 8z"></path>
+<path fill="none" stroke="#000" style="stroke: var(--color3, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.4" d="M16.2 16c0 4.308-3.582 7.8-8 7.8s-8-3.492-8-7.8c0-4.308 3.582-7.8 8-7.8s8 3.492 8 7.8z"></path>
+<path fill="#000" style="fill: var(--color3, #000)" d="M14.213 16c0 3.24-2.692 5.867-6.013 5.867s-6.013-2.627-6.013-5.867c0-3.24 2.692-5.867 6.013-5.867s6.013 2.627 6.013 5.867z"></path>
+</symbol>
+<symbol id="icon-upload" viewBox="0 0 32 32">
+<path fill="none" stroke="#fff" style="stroke: var(--color2, #fff)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.999" d="M24.081 13.040c0 6.098-4.943 11.041-11.041 11.041s-11.041-4.943-11.041-11.041c0-6.098 4.943-11.041 11.041-11.041s11.041 4.943 11.041 11.041z"></path>
+<path fill="#fff" style="fill: var(--color2, #fff)" d="M28.578 31.406l-8.476-8.476 2.828-2.828 8.476 8.476-2.828 2.828zM31.35 28.578h0.057c0.792 0.792 0.792 2.036 0 2.828s-2.036 0.792-2.828 0v-0.057l2.771-2.771zM20.131 22.958l-1.442-1.442 2.828-2.828 1.442 1.442-2.828 2.828z"></path>
+</symbol>
+</defs>
+</svg>

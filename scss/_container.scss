@@ -1,0 +1,12 @@
+.game__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  padding: 36px 0px 36px 0px;
+}
+
+.game {
+  border-top: 1px solid rgba(0, 0, 0, 1);
+}
