@@ -1,0 +1,82 @@
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 190px;
+  padding: 61px 0px 63px 0px;
+}
+
+.contact-list-footer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-footer {
+  color: rgba(0, 0, 0, 1);
+
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0%;
+}
+
+.footer-logo {
+  width: 165px;
+  height: 70px;
+}
+
+.footer-input {
+  border-radius: 20px;
+  background: rgba(215, 215, 215, 1);
+  color: rgba(126, 126, 126, 1);
+
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  padding: 10px 80px 10px 10px;
+  width: 204px;
+  outline: none;
+}
+
+.footer-button {
+  color: rgba(255, 255, 255, 1);
+
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  padding: 10px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 1);
+  
+}
+
+.footer-email {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.footer-label {
+  display: flex;
+  flex-direction: row;
+  gap: 36px;
+}
+
+.footer-text {
+  color: rgba(0, 0, 0, 1);
+
+  font-family: Montserrat Alternates;
+  font-size: 6px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}

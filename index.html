@@ -21,9 +21,15 @@
             <li class="nav-item nav-dropdown">
               <div class="dropdown-toggle">
                 <p class="nav-link">Інтерактив</p>
-                <svg class="dropdown-icon" width="5px" height="10px"></svg>
+                <button class="dropdown-change-background">
+                  <img
+                    src="./images/scroll-down.png"
+                    alt=""
+                    class="dropdown-arrow"
+                  />
+                </button>
               </div>
-              <ul class="dropdown-menu" style="display: none;">
+              <ul class="dropdown-menu" style="display: none">
                 <li class="dropdown-item">Числовий</li>
                 <li class="dropdown-item">Ігровий</li>
                 <li class="dropdown-item">Ознайомчий</li>
@@ -34,7 +40,9 @@
           </ul>
         </div>
         <div class="header-right">
-          <svg class="user-icon" width="40px" height="20px"></svg>
+          <svg class="user-icon" width="40px" height="20px">
+            <use href="/SVG/switcher.svg#icon-switcher"></use>
+          </svg>
           <p class="welcome-text">
             Вітаємо, <span class="username">User!</span>
           </p>
@@ -46,24 +54,31 @@
 
       <!-- Year of birth -->
       <section class="game game--leap-year">
+        <hr class="main-line" />
         <div class="container game__container">
           <h4 class="game__title">Перевір в який рік ти народився</h4>
           <div class="game__content">
             <label class="game__input-group">
               <input
                 type="text"
+                id="game-yob"
                 class="game__input change-size-first"
                 placeholder="Введіть рік народження"
               />
-              <button class="game__button"></button>
+              <button class="game__button" id="button-yob">
+                <svg width="15px" height="15px" class="upload-icon">
+                  <use href="/symbol-defs.svg#icon-upload"></use>
+                </svg>
+              </button>
             </label>
-            <p class="game__result">Ви народилися у високосний рік!</p>
+            <p class="game__result" id="result-yob"></p>
           </div>
         </div>
       </section>
 
       <!-- Guess the number -->
       <section class="game game--guess-number">
+        <hr class="main-line" />
         <div class="container game__container">
           <h4 class="game__title">Вгадай число, яке загадав комп’ютер</h4>
           <div class="game__content change-size-content">
@@ -71,43 +86,69 @@
               <input
                 type="text"
                 class="game__input change-size-second"
+                id="game-gtn"
                 placeholder="Введіть число"
               />
-              <button class="game__button"></button>
+              <button class="game__button" id="button-gtn">
+                <svg width="15px" height="15px">
+                  <use href="/symbol-defs.svg#icon-upload"></use>
+                </svg>
+              </button>
             </label>
-            <p class="game__result">
-              Вітаю, ви вгадали число!
-              <span class="game__answer">(number)</span>
-            </p>
+            <div class="game-guess-number-result-content">
+              <p class="game__result" id="result-gtn"></p>
+              <span class="game__result" id="result-gtn-number"></span>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Rock Paper Scissors -->
       <section class="game game--rps">
+        <hr class="main-line" />
         <div class="container game__container rps-content">
           <div class="game__play">
             <h4 class="game__title">Камінь - ножиці - папір</h4>
             <div class="game__content change-rps-content">
               <div class="rps__choices">
-                <svg class="rps__icon" width="60px" height="60px"></svg>
-                <svg class="rps__icon" width="60px" height="60px"></svg>
-                <svg class="rps__icon" width="60px" height="60px"></svg>
+                <img
+                  src="./images/stone.png"
+                  alt=""
+                  class="rps__icon"
+                  id="game-stone-icon"
+                />
+                <img
+                  src="./images/scissors.png"
+                  alt=""
+                  class="rps__icon"
+                  id="game-scissors-icon"
+                />
+                <img
+                  src="./images/paper.png"
+                  alt=""
+                  class="rps__icon"
+                  id="game-paper-icon"
+                />
               </div>
-              <p class="game__result">Ви виграли раунд!</p>
-              <button class="game__computer-result">Варіант комп’ютера</button>
+              <p class="game__result" id="result-rps"></p>
+              <button class="game__computer-result" id="game-rps-computer-show">
+                Варіант комп’ютера
+              </button>
             </div>
           </div>
           <div class="rps__scoreboard">
             <p class="scoreboard__title">Рахунок:</p>
-            <p class="scoreboard__line">Комп’ютер - 0</p>
-            <p class="scoreboard__line">Ви - 0</p>
+            <p class="scoreboard__line" id="game-rps-computer-score">
+              Комп’ютер - 0
+            </p>
+            <p class="scoreboard__line" id="game-rps-user-score">Ви - 0</p>
           </div>
         </div>
       </section>
 
       <!-- Calculator -->
       <section class="game game--calculator">
+        <hr class="main-line" />
         <div class="container game__container">
           <h4 class="game__title">Калькулятор</h4>
           <div class="game__content calculator-content">
@@ -115,17 +156,18 @@
               <input
                 type="text"
                 class="game__input change-input-first-calculator change-width-input-calculator-first"
+                id="game-calc-enter-first-number"
                 placeholder="Введіть число"
               />
             </label>
             <div class="calc__operators">
               <div class="calc__row">
-                <p class="calc__op">+</p>
-                <p class="calc__op">*</p>
+                <button class="calc__op" id="game-calc-plus">+</button>
+                <button class="calc__op" id="game-calc-minus">-</button>
               </div>
               <div class="calc__row">
-                <p class="calc__op">-</p>
-                <p class="calc__op">/</p>
+                <button class="calc__op" id="game-calc-multiply">*</button>
+                <button class="calc__op" id="game-calc-divide">/</button>
               </div>
             </div>
             <div class="calc__result-block">
@@ -133,17 +175,28 @@
                 <input
                   type="text"
                   class="game__input change-input-first-calculator change-width-input-calculator-first"
+                  id="game-calc-enter-second-number"
                   placeholder="Введіть число"
                 />
               </label>
-              <p class="calc__equals">=</p>
-              <label class="game__input-group">
+              <button class="calc__equals" id="game-calc-result-button">
+                =
+              </button>
+              <!-- <label class="game__input-group">
                 <input
                   type="text"
                   class="game__input change-input-first-calculator change-width-input-calculator-second"
+                  readonly
+                  id="game-result-calc"
                   placeholder="Результат"
                 />
-              </label>
+              </label> -->
+              <p
+                class="game__input change-input-first-calculator change-width-input-calculator-second"
+                id="game-result-calc"
+              >
+                Результат
+              </p>
             </div>
           </div>
         </div>
@@ -151,18 +204,23 @@
 
       <!-- Time Calculator -->
       <section class="game game--time">
-        <div class="container game__container">
+        <hr class="main-line" />
+        <div class="container game__container time-calculator__container">
           <h4 class="game__title">Калькулятор часу</h4>
-          <div class="game__content">
+          <div class="game__content time-calculator__content">
             <label class="game__input-group">
               <input
                 type="text"
-                class="game__input"
+                class="game__input time-calculator__input"
                 placeholder="Введіть число"
               />
-              <button class="game__button"></button>
+              <button class="game__button">
+                <svg width="15px" height="15px">
+                  <use href="/symbol-defs.svg#icon-upload"></use>
+                </svg>
+              </button>
             </label>
-            <svg class="time__icon"></svg>
+            <svg class="time__icon" width="100px" height="0px"></svg>
             <p class="game__result">3 дн. 15:45:01</p>
           </div>
         </div>
@@ -170,33 +228,35 @@
 
       <!-- Football -->
       <section class="game game--football">
+        <hr class="main-line" />
         <div class="container game__container">
           <h4 class="game__title">Футбол</h4>
           <div class="game__field">
-            <svg class="football__icon"></svg>
+            <img src="./images/ball.png" alt="" />
           </div>
         </div>
       </section>
 
       <!-- Find biggest number -->
       <section class="game game--max-number">
+        <hr class="main-line" />
         <div class="container game__container">
           <h4 class="game__title">Введіть 3 числа</h4>
           <div class="game__content">
-            <label class="game__input-group">
+            <label class="game__input-group max-number-labelGroup">
               <input
                 type="text"
-                class="game__input"
+                class="game__input change-input-maxnumber-first"
                 placeholder="Введіть число"
               />
               <input
                 type="text"
-                class="game__input"
+                class="game__input change-input-maxnumber-first"
                 placeholder="Введіть число"
               />
               <input
                 type="text"
-                class="game__input"
+                class="game__input change-input-maxnumber-first"
                 placeholder="Введіть число"
               />
             </label>
@@ -210,12 +270,17 @@
 
       <!-- Our Team -->
       <section class="team-section">
+        <hr class="main-line" />
         <div class="container team__container">
           <h4 class="team__title">Наша команда</h4>
           <div class="team__controls">
-            <svg class="team__icon"></svg>
+            <button class="team-class-delete-background">
+              <img src="./images/arrow-left.png" alt="" class="team-arrows" />
+            </button>
             <img src="" alt="" class="team__photo" />
-            <svg class="team__icon"></svg>
+            <button class="team-class-delete-background">
+              <img src="./images/arrow-right.png" alt="" class="team-arrows" />
+            </button>
           </div>
           <div class="team__info">
             <p class="team__name">Ім’я студента</p>
@@ -231,54 +296,108 @@
 
       <!-- Scientists -->
       <section class="scientists-section">
+        <hr class="main-line" />
         <div class="container scientists__container">
           <h4 class="scientists__title">Обери вченого/их</h4>
           <ul class="scientists__list">
-            <li class="scientists__item"></li>
-            <li class="scientists__item"></li>
-            <li class="scientists__item"></li>
-            <li class="scientists__item"></li>
-            <li class="scientists__item"></li>
-            <li class="scientists__item"></li>
-            <li class="scientists__item"></li>
-            <li class="scientists__item"></li>
-            <li class="scientists__item"></li>
-            <li class="scientists__item"></li>
-            <li class="scientists__item"></li>
-            <li class="scientists__item"></li>
+            <li class="scientists__item-list">
+              <ul class="scientists__item-section">
+                <li class="scientists__item">
+                  <p class="scientists-name">Albert Einstein</p>
+                  <p class="scientists-dob">1879-1955</p>
+                </li>
+                <li class="scientists__item">
+                  <p class="scientists-name">Isaac Newton</p>
+                  <p class="scientists-dob">1643-1727</p>
+                </li>
+                <li class="scientists__item">
+                  <p class="scientists-name">Galileo Galilei</p>
+                  <p class="scientists-dob">1564-1642</p>
+                </li>
+              </ul>
+            </li>
+            <li class="scientists__item-list">
+              <ul class="scientists__item-section">
+                <li class="scientists__item">
+                  <p class="scientists-name">Marie Curie</p>
+                  <p class="scientists-dob">1867-1934</p>
+                </li>
+                <li class="scientists__item">
+                  <p class="scientists-name">Johannes Kepler</p>
+                  <p class="scientists-dob">1571-1630</p>
+                </li>
+                <li class="scientists__item">
+                  <p class="scientists-name">Nicolaus Copernicus</p>
+                  <p class="scientists-dob">1473-1543</p>
+                </li>
+              </ul>
+            </li>
+            <li class="scientists__item-list">
+              <ul class="scientists__item-section">
+                <li class="scientists__item">
+                  <p class="scientists-name">Max Planck</p>
+                  <p class="scientists-dob">1858-1947</p>
+                </li>
+                <li class="scientists__item">
+                  <p class="scientists-name">Katherine Blodgett</p>
+                  <p class="scientists-dob">1898-1979</p>
+                </li>
+                <li class="scientists__item">
+                  <p class="scientists-name">Ada Lovelace</p>
+                  <p class="scientists-dob">1815-1852</p>
+                </li>
+              </ul>
+            </li>
+            <li class="scientists__item-list">
+              <ul class="scientists__item-section">
+                <li class="scientists__item">
+                  <p class="scientists-name">Sarah E. Goode</p>
+                  <p class="scientists-dob">1855-1905</p>
+                </li>
+                <li class="scientists__item">
+                  <p class="scientists-name">Lise Meitner</p>
+                  <p class="scientists-dob">1878-1968</p>
+                </li>
+                <li class="scientists__item">
+                  <p class="scientists-name">Hanna Hammarstrom</p>
+                  <p class="scientists-dob">1829-1909</p>
+                </li>
+              </ul>
+            </li>
           </ul>
           <div class="scientists__actions">
-            <div class="scientists__group">
-              <button class="scientists__button">
+            <div class="scientists__group-one">
+              <button class="scientists__button change-size-scientists-one">
                 Які вчені народилися в 19 ст.
               </button>
-              <button class="scientists__button">
-                Знайти рік народження Albert Einshtein
-              </button>
-              <button class="scientists__button">
+              <button class="scientists__button change-size-scientists-two">
                 Відсортувати вчених за алфавітом
               </button>
-              <button class="scientists__button">
-                Знайти вчених, прізвища яких починаються на літеру “С”
-              </button>
-            </div>
-            <div class="scientists__group">
-              <button class="scientists__button">
+              <button class="scientists__button change-size-scientists-three">
                 Відсортувати вчених за кількістю прожитих років
               </button>
-              <button class="scientists__button">
-                Видалити всіх вчених, ім’я яких починається на “А”
-              </button>
-              <button class="scientists__button">
+
+              <button class="scientists__button change-size-scientists-four">
                 Знайти вченого, який народився найпізніше
               </button>
-              <button class="scientists__button">
+            </div>
+            <div class="scientists__group-two">
+              <button class="scientists__button change-size-scientists-five">
+                Знайти рік народження Albert Einshtein
+              </button>
+              <button class="scientists__button change-size-scientists-six">
+                Знайти вчених, прізвища яких починаються на літеру “С”
+              </button>
+              <button class="scientists__button change-size-scientists-seven">
+                Видалити всіх вчених, ім’я яких починається на “А”
+              </button>
+              <button class="scientists__button change-size-scientists-eight">
                 Знайти вченого, який прожив найдовше і вченого, який прожив
                 найменше
               </button>
             </div>
           </div>
-          <button class="scientists__button">
+          <button class="scientists__button change-size-scientists-nine">
             Знайти вчених, в яких співпадають перші літери імені і прізвища
           </button>
         </div>
@@ -286,49 +405,90 @@
     </main>
 
     <footer>
-      <div class="container">
-        <img src="" alt="" />
-        <div>
-          <p>
-            Тел: +38 (123) 456 78 90 E-Mail: codingmagic@gmail.com Facebook:
-            CodingMagic Twitter: CodingMagic Instagram: CodingMagic
-          </p>
+      <div class="container footer-content">
+        <img src="./images/logo.png" alt="" class="footer-logo" />
+        <div class="contact-list-footer">
+          <a href="tel:+38 (123) 456 78 90" class="contact-footer"
+            >Tel: +38 (123) 456 78 90</a
+          >
+          <a href="mailto:codingmagic@gmail.com" class="contact-footer"
+            >Email: codingmagic@gmail.com</a
+          >
+          <a href="http://" class="contact-footer">Facebook: CodingMagic</a>
+          <a href="http://" class="contact-footer">Twitter: CodingMagic</a>
+          <a href="http://" class="contact-footer">Instagram: CodingMagic</a>
         </div>
-        <div>
-          <form action="">
-            <label for="">
-              <input type="email" placeholder="Ваша ел. адреса..." />
-              <button>Підписатись</button>
+        <div class="footer-email">
+          <form action="" class="footer-form">
+            <label for="" class="footer-label">
+              <input
+                type="email"
+                placeholder="Ваша ел. адреса..."
+                class="footer-input"
+              />
+              <button class="footer-button">Підписатись</button>
             </label>
           </form>
-          <p>
+          <p class="footer-text">
             *Підписавшись, Ви зможете ортимувати інформаццію про новинки на
             сайті
           </p>
         </div>
       </div>
     </footer>
-    <div style="display: none">
-      <svg></svg>
-      <div>
-        <p>
-          Привіт! Ви потрапили на сайт інтерактивних ігор та завдань Надіємось,
+    <div class="hero" style="display: none">
+      <svg class="hero__ornament hero__ornament--left" aria-hidden="true"></svg>
+
+      <div class="hero__content">
+        <p class="hero__welcome">
+          Привіт! Ви потрапили на сайт інтерактивних ігор та завдань. Надіємось,
           що вам сподобається і ви отримаєте позитивні емоції! Бажаємо Вам гарно
           провести час!
         </p>
-        <p>Введіть своє ім’я:</p>
-        <form action="">
-          <label for="">
-            <input type="text" />
+
+        <form class="hero__form" action="">
+          <p class="hero__prompt">Введіть своє ім’я:</p>
+          <label class="hero__label" for="player-name">
+            <input
+              id="player-name"
+              class="hero__input"
+              type="text"
+              name="playerName"
+              aria-label="Ім'я гравця"
+              placeholder="Ваше ім'я"
+            />
           </label>
-          <button>Зберегти</button>
+
+          <button class="hero__button" type="submit">Зберегти</button>
         </form>
       </div>
-      <svg></svg>
-      <svg></svg>
-      <svg></svg>
-      <svg></svg>
+
+      <svg
+        class="hero__ornament hero__ornament--1"
+        aria-hidden="true"
+        width="30px"
+        height="30px"
+      ></svg>
+      <svg
+        class="hero__ornament hero__ornament--2"
+        aria-hidden="true"
+        width="30px"
+        height="30px"
+      ></svg>
+      <svg
+        class="hero__ornament hero__ornament--3"
+        aria-hidden="true"
+        width="30px"
+        height="30px"
+      ></svg>
+      <svg
+        class="hero__ornament hero__ornament--right"
+        aria-hidden="true"
+        width="30px"
+        height="30px"
+      ></svg>
     </div>
+
     <div style="display: none">
       <p>Дякую за підписку!</p>
       <svg></svg>
@@ -336,5 +496,6 @@
       <svg></svg>
       <svg></svg>
     </div>
+    <script src="./index.js"></script>
   </body>
 </html>

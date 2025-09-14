@@ -61,6 +61,95 @@
   gap: 50px;
 }
 
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  justify-content: center;
+}
+
+.dropdown-change-background {
+  background-color: white;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 190px;
+  padding: 61px 0px 63px 0px;
+}
+
+.contact-list-footer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-footer {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0%;
+}
+
+.footer-logo {
+  width: 165px;
+  height: 70px;
+}
+
+.footer-input {
+  border-radius: 20px;
+  background: rgb(215, 215, 215);
+  color: rgb(126, 126, 126);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  padding: 10px 80px 10px 10px;
+  width: 204px;
+  outline: none;
+}
+
+.footer-button {
+  color: rgb(255, 255, 255);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  padding: 10px;
+  border-radius: 20px;
+  background: rgb(0, 0, 0);
+}
+
+.footer-email {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.footer-label {
+  display: flex;
+  flex-direction: row;
+  gap: 36px;
+}
+
+.footer-text {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 6px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
 .game__container {
   display: flex;
   flex-direction: column;
@@ -68,10 +157,33 @@
   justify-content: center;
   gap: 36px;
   padding: 36px 0px 36px 0px;
+  position: relative;
 }
 
-.game {
-  border-top: 1px solid rgb(0, 0, 0);
+.main-line {
+  width: 536px;
+  height: 1px;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.team__container,
+.scientists__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 0px 36px 0px;
+}
+
+main {
+  background-image: url(/images/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.game, .scientists-section, .team-section {
+  background-color: white;
+  height: 100%;
 }
 
 h1,
@@ -131,6 +243,64 @@ button {
   margin: 0;
 }
 
+.hero__input {
+  color: rgb(126, 126, 126);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  width: 169px;
+  padding: 10px 90px 10px 10px;
+  border-radius: 20px;
+  background: rgb(215, 215, 215);
+  outline: none;
+}
+
+.hero__button {
+  color: rgb(255, 255, 255);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
+  background: rgb(0, 0, 0);
+}
+
+.hero__welcome {
+  color: rgb(0, 0, 0);
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.hero {
+  border-radius: 20px;
+  background: rgb(255, 255, 255);
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 42px;
+}
+
+.hero__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
 .container {
   width: 1090px;
   margin: 0 auto;
@@ -155,6 +325,11 @@ button {
   padding: 0px 0px 36px 0px;
 }
 
+.game-guess-number-result-content {
+  display: flex;
+  gap: 5px;
+}
+
 .game__title {
   color: rgb(0, 0, 0);
   font-family: Montserrat Alternates;
@@ -173,10 +348,21 @@ button {
   line-height: 100%;
   letter-spacing: 0%;
   text-align: left;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
 }
 
 .game__result {
   color: rgb(3, 153, 0);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+}
+
+.game__result-incorrect {
+  color: rgb(153, 0, 0);
   font-family: Montserrat Alternates;
   font-size: 12px;
   font-weight: 400;
@@ -193,6 +379,7 @@ button {
   line-height: 100%;
   letter-spacing: 0%;
   text-align: left;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
 }
 
 .scorebooard__title,
@@ -239,11 +426,38 @@ button {
 .team__photo {
   border-radius: 20px;
   background: rgb(217, 217, 217);
+  width: 150px;
+  height: 150px;
 }
 
-.scientists__item {
-  border-radius: 20px;
-  background: rgb(217, 217, 217);
+.team__info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.team__details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.team__controls {
+  display: flex;
+  flex-direction: row;
+  gap: 328px;
+  padding: 36px 0px 20px 0px;
+}
+
+.team-arrows {
+  width: 50px;
+  height: 100px;
+}
+
+.team-class-delete-background {
+  background-color: white;
 }
 
 .game__content {
@@ -311,6 +525,7 @@ button {
 .rps__icon {
   border-radius: 20px;
   background: rgb(0, 0, 0);
+  padding: 10px;
 }
 
 .rps__choices {
@@ -322,8 +537,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 36px;
-  align-items: flex-end;
-  width: 50%;
+  align-items: center;
 }
 
 .rps-content {
@@ -334,7 +548,8 @@ button {
 }
 
 .rps__scoreboard {
-  margin-left: 105px;
+  position: absolute;
+  right: 220px;
 }
 
 .calc__op {
@@ -366,6 +581,7 @@ button {
   border-radius: 20px;
   box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
   background: rgb(215, 215, 215);
+  text-align: center;
 }
 
 .change-width-input-calculator-first {
@@ -380,7 +596,6 @@ button {
   border-radius: 20px;
   box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
   background: rgb(0, 0, 0);
-  width: 27px;
   padding: 5px 10px 5px 10px;
   color: rgb(255, 255, 255);
   font-family: Montserrat Alternates;
@@ -389,9 +604,178 @@ button {
   line-height: 100%;
   letter-spacing: 0%;
   text-align: left;
+  width: 27px;
+  height: 25px;
 }
 
 .calculator-content {
   display: flex;
-  gap: 0px;
+  gap: 38px;
+}
+
+.calc__result-block {
+  display: flex;
+  flex-direction: row;
+  gap: 38px;
+  align-items: center;
+}
+
+.time-calculator__content {
+  display: flex;
+  gap: 33px;
+}
+
+.time-calculator__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-calculator__input {
+  width: 115px;
+}
+
+.game__field {
+  box-sizing: border-box;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 37px;
+  background: rgb(90, 187, 88);
+  width: 720px;
+  height: 220px;
+}
+
+.change-input-maxnumber-first {
+  border-radius: 20px;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
+  background: rgb(215, 215, 215);
+  width: 135px;
+  padding: 10px 20px 10px 20px;
+}
+
+.max-number-labelGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 38px;
+}
+
+.scientists__item {
+  border-radius: 20px;
+  background: rgb(217, 217, 217);
+  width: 100px;
+  height: 100px;
+}
+
+.scientists__list {
+  display: flex;
+  gap: 60px;
+  padding: 36px 0px 36px 0px;
+}
+
+.scientists__item-section {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.scientists__button {
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+}
+
+.scientists__actions {
+  display: flex;
+  flex-direction: row;
+  gap: 36px;
+  padding: 0px 0px 20px 0px;
+}
+
+.scientists__group-one {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.scientists__group-two {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.change-size-scientists-one {
+  width: 227px;
+}
+
+.change-size-scientists-two {
+  width: 282px;
+}
+
+.change-size-scientists-three {
+  width: 380px;
+}
+
+.change-size-scientists-four {
+  width: 329px;
+}
+
+.change-size-scientists-five {
+  width: 298px;
+}
+
+.change-size-scientists-six {
+  width: 425px;
+}
+
+.change-size-scientists-seven {
+  width: 380px;
+  text-align: left;
+}
+
+.change-size-scientists-eight {
+  width: 368px;
+  text-align: left;
+}
+
+.change-size-scientists-nine {
+  width: 489px;
+}
+
+.scientists-name,
+.scientists-dob {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 10px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.scientists__item {
+  border-radius: 20px;
+  background: rgb(217, 217, 217);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.scientists__title {
+  color: rgb(0, 0, 0);
+  font-family: Montserrat Alternates;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
 }

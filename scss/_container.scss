@@ -5,8 +5,38 @@
   justify-content: center;
   gap: 36px;
   padding: 36px 0px 36px 0px;
+  position: relative;
 }
 
-.game {
-  border-top: 1px solid rgba(0, 0, 0, 1);
+// .game,
+// .team-section,
+// .scientists-section {
+//   border-top: 1px solid rgba(0, 0, 0, 1);
+
+// }
+
+.main-line {
+  width: 536px;
+  height: 1px;
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.team__container,
+.scientists__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 0px 36px 0px;
+}
+
+main {
+  background-image: url(/images/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.game, .scientists-section, .team-section  {
+  background-color: white;
+  height: 100%;
 }

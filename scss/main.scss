@@ -2,6 +2,7 @@
 @use "./footer";
 @use "./container";
 @use "./reset";
+@use "./modal-window";
 
 .container {
   width: 1090px;
@@ -29,6 +30,11 @@
 
 // game-section and other classes for elements
 
+.game-guess-number-result-content {
+  display: flex;
+  gap: 5px;
+}
+
 .game__title {
   color: rgba(0, 0, 0, 1);
 
@@ -49,10 +55,23 @@
   line-height: 100%;
   letter-spacing: 0%;
   text-align: left;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
 }
+
+// correct or not correct
 
 .game__result {
   color: rgba(3, 153, 0, 1);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+}
+
+.game__result-incorrect {
+  color: rgba(153, 0, 0, 1);
   font-family: Montserrat Alternates;
   font-size: 12px;
   font-weight: 400;
@@ -70,6 +89,7 @@
   line-height: 100%;
   letter-spacing: 0%;
   text-align: left;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
 }
 
 // .game--leap-year {
@@ -127,11 +147,38 @@
 .team__photo {
   border-radius: 20px;
   background: rgba(217, 217, 217, 1);
+  width: 150px;
+  height: 150px;
 }
 
-.scientists__item {
-  border-radius: 20px;
-  background: rgba(217, 217, 217, 1);
+.team__info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.team__details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.team__controls {
+  display: flex;
+  flex-direction: row;
+  gap: 328px;
+  padding: 36px 0px 20px 0px;
+}
+
+.team-arrows {
+  width: 50px;
+  height: 100px;
+}
+
+.team-class-delete-background {
+  background-color: white;
 }
 
 // main styles, flex, boarders and e.t.c
@@ -207,6 +254,7 @@
 .rps__icon {
   border-radius: 20px;
   background: rgba(0, 0, 0, 1);
+  padding: 10px;
 }
 
 .rps__choices {
@@ -218,8 +266,7 @@
   display: flex;
   flex-direction: column;
   gap: 36px;
-  align-items: flex-end;
-  width: 50%;
+  align-items: center;
 }
 
 .rps-content {
@@ -230,7 +277,8 @@
 }
 
 .rps__scoreboard {
-  margin-left: 105px;
+  position: absolute;
+  right: 220px;
 }
 
 // calculator
@@ -265,6 +313,7 @@
   border-radius: 20px;
   box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
   background: rgba(215, 215, 215, 1);
+  text-align: center;
 }
 
 .change-width-input-calculator-first {
@@ -279,7 +328,6 @@
   border-radius: 20px;
   box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
   background: rgba(0, 0, 0, 1);
-  width: 27px;
   padding: 5px 10px 5px 10px;
   color: rgba(255, 255, 255, 1);
 
@@ -289,13 +337,186 @@
   line-height: 100%;
   letter-spacing: 0%;
   text-align: left;
+  width: 27px;
+  height: 25px;
 }
 
 .calculator-content {
   display: flex;
-  gap: 0px;
+  gap: 38px;
 }
 
 .calc__result-block {
+  display: flex;
+  flex-direction: row;
+  gap: 38px;
+  align-items: center;
+}
 
+// time calculator
+
+.time-calculator__content {
+  display: flex;
+  gap: 33px;
+}
+
+.time-calculator__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-calculator__input {
+  width: 115px;
+}
+
+// football-game
+
+.game__field {
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 1);
+  border-radius: 37px;
+  background: rgba(90, 187, 88, 1);
+  width: 720px;
+  height: 220px;
+}
+
+// maxnumber
+
+.change-input-maxnumber-first {
+  border-radius: 20px;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
+  background: rgba(215, 215, 215, 1);
+  width: 135px;
+  padding: 10px 20px 10px 20px;
+}
+
+.max-number-labelGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 38px;
+}
+
+// scientists-section
+
+.scientists__item {
+  border-radius: 20px;
+  background: rgba(217, 217, 217, 1);
+  width: 100px;
+  height: 100px;
+}
+
+.scientists__list {
+  display: flex;
+  gap: 60px;
+  padding: 36px 0px 36px 0px;
+}
+
+.scientists__item-section {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.scientists__button {
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
+  font-family: Montserrat Alternates;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+}
+
+.scientists__actions {
+  display: flex;
+  flex-direction: row;
+  gap: 36px;
+  padding: 0px 0px 20px 0px;
+}
+
+.scientists__group-one {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.scientists__group-two {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.change-size-scientists-one {
+  width: 227px;
+}
+
+.change-size-scientists-two {
+  width: 282px;
+}
+
+.change-size-scientists-three {
+  width: 380px;
+}
+
+.change-size-scientists-four {
+  width: 329px;
+}
+
+.change-size-scientists-five {
+  width: 298px;
+}
+
+.change-size-scientists-six {
+  width: 425px;
+}
+.change-size-scientists-seven {
+  width: 380px;
+  text-align: left;
+}
+.change-size-scientists-eight {
+  width: 368px;
+  text-align: left;
+}
+
+.change-size-scientists-nine {
+  width: 489px;
+}
+
+.scientists-name,
+.scientists-dob {
+  color: rgba(0, 0, 0, 1);
+
+  font-family: Montserrat Alternates;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 10px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.scientists__item {
+  border-radius: 20px;
+  background: rgba(217, 217, 217, 1);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.scientists__title {
+  color: rgba(0, 0, 0, 1);
+
+  font-family: Montserrat Alternates;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
 }

@@ -61,3 +61,14 @@
   display: flex;
   gap: 50px;
 }
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  justify-content: center;
+}
+
+.dropdown-change-background {
+  background-color: white;
+}
