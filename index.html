@@ -40,9 +40,9 @@
           </ul>
         </div>
         <div class="header-right">
-          <svg class="user-icon" width="40px" height="20px">
+          <!-- <svg class="user-icon" width="40px" height="20px">
             <use href="/SVG/switcher.svg#icon-switcher"></use>
-          </svg>
+          </svg> -->
           <p class="welcome-text">
             Вітаємо, <span class="username">User!</span>
           </p>
@@ -111,24 +111,33 @@
             <h4 class="game__title">Камінь - ножиці - папір</h4>
             <div class="game__content change-rps-content">
               <div class="rps__choices">
-                <img
-                  src="./images/stone.png"
-                  alt=""
-                  class="rps__icon"
-                  id="game-stone-icon"
-                />
-                <img
-                  src="./images/scissors.png"
-                  alt=""
-                  class="rps__icon"
-                  id="game-scissors-icon"
-                />
-                <img
-                  src="./images/paper.png"
-                  alt=""
-                  class="rps__icon"
-                  id="game-paper-icon"
-                />
+                <button class="rps-button">
+                  <img
+                    src="./images/stone.png"
+                    alt=""
+                    class="rps__icon"
+                    data-choice="rock"
+                    id="game-stone-icon"
+                  />
+                </button>
+                <button class="rps-button">
+                  <img
+                    src="./images/scissors.png"
+                    alt=""
+                    class="rps__icon"
+                    data-choice="scissors"
+                    id="game-scissors-icon"
+                  />
+                </button>
+                <button class="rps-button">
+                  <img
+                    src="./images/paper.png"
+                    alt=""
+                    class="rps__icon"
+                    data-choice="paper"
+                    id="game-paper-icon"
+                  />
+                </button>
               </div>
               <p class="game__result" id="result-rps"></p>
               <button class="game__computer-result" id="game-rps-computer-show">
@@ -214,14 +223,14 @@
                 class="game__input time-calculator__input"
                 placeholder="Введіть число"
               />
-              <button class="game__button">
+              <button class="game__button game__timeCalc-button">
                 <svg width="15px" height="15px">
                   <use href="/symbol-defs.svg#icon-upload"></use>
                 </svg>
               </button>
             </label>
             <svg class="time__icon" width="100px" height="0px"></svg>
-            <p class="game__result">3 дн. 15:45:01</p>
+            <p class="game__result game__result-CalcTime">3 дн. 15:45:01</p>
           </div>
         </div>
       </section>
@@ -232,7 +241,12 @@
         <div class="container game__container">
           <h4 class="game__title">Футбол</h4>
           <div class="game__field">
-            <img src="./images/ball.png" alt="" />
+            <img
+              src="./images/ball.png"
+              alt=""
+              class="football-object"
+              draggable="true"
+            />
           </div>
         </div>
       </section>
@@ -245,25 +259,28 @@
           <div class="game__content">
             <label class="game__input-group max-number-labelGroup">
               <input
-                type="text"
-                class="game__input change-input-maxnumber-first"
+                type="number"
+                class="game__input change-input-maxnumber-first game-maxNum"
+                data-num="num1"
                 placeholder="Введіть число"
               />
               <input
-                type="text"
-                class="game__input change-input-maxnumber-first"
+                type="number"
+                class="game__input change-input-maxnumber-first game-maxNum"
+                data-num="num2"
                 placeholder="Введіть число"
               />
               <input
-                type="text"
-                class="game__input change-input-maxnumber-first"
+                type="number"
+                class="game__input change-input-maxnumber-first game-maxNum"
+                data-num="num3"
                 placeholder="Введіть число"
               />
             </label>
           </div>
           <p class="game__result">
             Найбільше число, яке ви ввели -
-            <span class="game__answer">(число)</span>
+            <span class="game__answer game__maxNumResult"></span>
           </p>
         </div>
       </section>

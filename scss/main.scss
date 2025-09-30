@@ -251,6 +251,10 @@
   text-align: left;
 }
 
+.rps-button {
+  background-color: inherit;
+}
+
 .rps__icon {
   border-radius: 20px;
   background: rgba(0, 0, 0, 1);
@@ -379,6 +383,13 @@
   background: rgba(90, 187, 88, 1);
   width: 720px;
   height: 220px;
+  position: relative;
+}
+
+.football-object {
+  position: absolute;
+  user-select: none;
+  cursor: grab;
 }
 
 // maxnumber

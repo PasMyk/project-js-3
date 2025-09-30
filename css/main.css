@@ -522,6 +522,10 @@ button {
   text-align: left;
 }
 
+.rps-button {
+  background-color: inherit;
+}
+
 .rps__icon {
   border-radius: 20px;
   background: rgb(0, 0, 0);
@@ -642,6 +646,15 @@ button {
   background: rgb(90, 187, 88);
   width: 720px;
   height: 220px;
+  position: relative;
+}
+
+.football-object {
+  position: absolute;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: grab;
 }
 
 .change-input-maxnumber-first {
