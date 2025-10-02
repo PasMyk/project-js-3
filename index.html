@@ -41,7 +41,7 @@
         </div>
         <div class="header-right">
           <!-- <svg class="user-icon" width="40px" height="20px">
-            <use href="/SVG/switcher.svg#icon-switcher"></use>
+            <use href="/switcher.svg#icon-switcher"></use>
           </svg> -->
           <p class="welcome-text">
             Вітаємо, <span class="username">User!</span>
@@ -191,15 +191,7 @@
               <button class="calc__equals" id="game-calc-result-button">
                 =
               </button>
-              <!-- <label class="game__input-group">
-                <input
-                  type="text"
-                  class="game__input change-input-first-calculator change-width-input-calculator-second"
-                  readonly
-                  id="game-result-calc"
-                  placeholder="Результат"
-                />
-              </label> -->
+
               <p
                 class="game__input change-input-first-calculator change-width-input-calculator-second"
                 id="game-result-calc"
@@ -257,21 +249,21 @@
         <div class="container game__container">
           <h4 class="game__title">Введіть 3 числа</h4>
           <div class="game__content">
-            <label class="game__input-group max-number-labelGroup">
+            <label class="game__input-group max-number-label-group">
               <input
-                type="number"
+                type="text"
                 class="game__input change-input-maxnumber-first game-maxNum"
                 data-num="num1"
                 placeholder="Введіть число"
               />
               <input
-                type="number"
+                type="text"
                 class="game__input change-input-maxnumber-first game-maxNum"
                 data-num="num2"
                 placeholder="Введіть число"
               />
               <input
-                type="number"
+                type="text"
                 class="game__input change-input-maxnumber-first game-maxNum"
                 data-num="num3"
                 placeholder="Введіть число"
@@ -292,21 +284,96 @@
           <h4 class="team__title">Наша команда</h4>
           <div class="team__controls">
             <button class="team-class-delete-background">
-              <img src="./images/arrow-left.png" alt="" class="team-arrows" />
+              <img
+                src="./images/arrow-left.png"
+                alt=""
+                class="team-arrows"
+                data-left="arr-left"
+              />
             </button>
-            <img src="" alt="" class="team__photo" />
+            <div class="team__list">
+              <div class="team__manager">
+                <img
+                  src="./employers-images/manager-photo1.webp"
+                  alt=""
+                  class="team__photo"
+                />
+                <p class="team__name-manager1 team__name">Rob Willson</p>
+                <p class="team__work team__work-manager1">Director</p>
+              </div>
+              <div class="team__manager">
+                <img
+                  src="./employers-images/manager-photo2.jpg"
+                  alt=""
+                  class="team__photo"
+                  style="display: none"
+                />
+                <p class="team__name-magaer2 team__name" style="display: none">
+                  Darrel Cquit
+                </p>
+                <p class="team__work team__work-manager2" style="display: none">
+                  Worker
+                </p>
+              </div>
+              <div class="team__manager">
+                <img
+                  src="./employers-images/manager-photo3.webp"
+                  alt=""
+                  class="team__photo"
+                  style="display: none"
+                />
+                <p class="team__name-magaer3 team__name" style="display: none">
+                  Mike Harreson
+                </p>
+                <p class="team__work team__work-manager3" style="display: none">
+                  Worker
+                </p>
+              </div>
+              <div class="team__manager">
+                <img
+                  src="./employers-images/manager-photo4.webp"
+                  alt=""
+                  class="team__photo"
+                  style="display: none"
+                />
+                <p class="team__name-magaer4 team__name" style="display: none">
+                  Gorge Tail
+                </p>
+                <p class="team__work team__work-manager4" style="display: none">
+                  Photographer
+                </p>
+              </div>
+              <div class="team__manager">
+                <img
+                  src="./employers-images/manager-photo5.jpg"
+                  alt=""
+                  class="team__photo"
+                  style="display: none"
+                />
+                <p class="team__name-magaer5 team__name" style="display: none">
+                  Rob Smith
+                </p>
+                <p class="team__work team__work-manager5" style="display: none">
+                  Designer
+                </p>
+              </div>
+            </div>
+
             <button class="team-class-delete-background">
-              <img src="./images/arrow-right.png" alt="" class="team-arrows" />
+              <img
+                src="./images/arrow-right.png"
+                alt=""
+                class="team-arrows"
+                data-right="arr-right"
+              />
             </button>
           </div>
-          <div class="team__info">
-            <p class="team__name">Ім’я студента</p>
-            <div class="team__details">
-              <p class="team__work">
-                Інформація про роботу, яку він/вона виконав/ла
-              </p>
-              <div class="team__slider"><p>slider</p></div>
-            </div>
+          <div class="team__slider">
+            <button class="team__slider-button active" data-btn="btn1"></button>
+            <button class="team__slider-button" data-btn="btn2"></button>
+            <button class="team__slider-button" data-btn="btn3"></button>
+            <button class="team__slider-button" data-btn="btn4"></button>
+            <button class="team__slider-button" data-btn="btn5"></button>
           </div>
         </div>
       </section>

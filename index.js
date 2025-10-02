@@ -171,7 +171,7 @@ getFootballField.addEventListener("mousemove", (e) => {
 // biggest number
 
 const getMaxNumResult = document.querySelector(".game__maxNumResult");
-const labelInp = document.querySelector(".game__input-group");
+const labelInp = document.querySelector(".max-number-label-group");
 
 let arr = {
   num1: 0,
@@ -180,19 +180,44 @@ let arr = {
 };
 
 labelInp.addEventListener("input", (e) => {
+  e.target.value = e.target.value.replace(/\D/g, "");
+
   switch (e.target.dataset.num) {
     case "num1":
-      arr = { ...arr, num1: e.target.value };
+      arr = { ...arr, num1: Number(e.target.value) };
       break;
     case "num2":
-      arr = { ...arr, num2: e.target.value };
+      arr = { ...arr, num2: Number(e.target.value) };
       break;
     case "num3":
-      arr = { ...arr, num3: e.target.value };
+      arr = { ...arr, num3: Number(e.target.value) };
       break;
   }
+
   let { num1, num2, num3 } = arr;
   console.log(arr);
 
   getMaxNumResult.textContent = Math.max(num1, num2, num3);
+});
+
+// team
+
+const getWorkersTeam = Array.from(document.querySelectorAll(".team__names"));
+const getWorkersTitleTeam = Array.from(
+  document.querySelectorAll(".team__work")
+);
+const getBtnTeam = Array.from(
+  document.querySelectorAll(".team__slider-button")
+);
+const getWorkersPhotoTeam = Array.from(
+  document.querySelectorAll(".team__photo")
+);
+const getArrowsTeam = Array.from(document.querySelectorAll(".team-arrows"));
+
+getBtnTeam.forEach((element) => {
+  element.addEventListener("click", (e) => {
+    if (element.classList.contains("active")) {
+    }
+  });
+  console.log(element.classList.contains("active"));
 });

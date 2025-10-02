@@ -428,20 +428,9 @@ button {
   background: rgb(217, 217, 217);
   width: 150px;
   height: 150px;
-}
-
-.team__info {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.team__details {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 24px;
+  border-color: rgb(217, 217, 217);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .team__controls {
@@ -458,6 +447,37 @@ button {
 
 .team-class-delete-background {
   background-color: white;
+}
+
+.team__slider-button {
+  border-radius: 3px;
+  height: 3px;
+  background-color: #d9d9d9;
+  width: 18px;
+}
+
+.team__slider-button:hover {
+  transition-timing-function: linear;
+  transition-duration: 250ms;
+  transition-property: width, color;
+}
+
+.active {
+  width: 30px;
+  background-color: #797979;
+}
+
+.team__slider {
+  display: flex;
+  gap: 6px;
+  padding: 24px 0px 0px 0px;
+}
+
+.team__manager {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .game__content {
@@ -665,7 +685,7 @@ button {
   padding: 10px 20px 10px 20px;
 }
 
-.max-number-labelGroup {
+.max-number-label-group {
   display: flex;
   flex-direction: row;
   gap: 38px;
