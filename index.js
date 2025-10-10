@@ -202,22 +202,147 @@ labelInp.addEventListener("input", (e) => {
 
 // team
 
-const getWorkersTeam = Array.from(document.querySelectorAll(".team__names"));
-const getWorkersTitleTeam = Array.from(
-  document.querySelectorAll(".team__work")
-);
-const getBtnTeam = Array.from(
-  document.querySelectorAll(".team__slider-button")
-);
-const getWorkersPhotoTeam = Array.from(
-  document.querySelectorAll(".team__photo")
-);
-const getArrowsTeam = Array.from(document.querySelectorAll(".team-arrows"));
+// const getWorkersTeam = Array.from(document.querySelectorAll(".team__names"));
+// const getWorkersTitleTeam = Array.from(
+//   document.querySelectorAll(".team__work")
+// );
+// const getBtnTeam = Array.from(
+//   document.querySelectorAll(".team__slider-button")
+// );
+// const getWorkersPhotoTeam = Array.from(
+//   document.querySelectorAll(".team__photo")
+// );
+// const getArrowsTeam = Array.from(document.querySelectorAll(".team-arrows"));
+// let imagesIndexTeam = 0;
 
-getBtnTeam.forEach((element) => {
-  element.addEventListener("click", (e) => {
-    if (element.classList.contains("active")) {
+// getBtnTeam.forEach((element) => {
+//   element.addEventListener("click", (e) => {
+//     if (element.classList.contains("active")) {
+//     }
+//   });
+//   console.log(element.classList.contains("active"));
+// });
+
+// scientists
+
+const getButtonsScientists = document.querySelector(".scientists__actions");
+const getBlocksScientists = Array.from(
+  document.querySelectorAll(".scientists__item")
+);
+// let blocks = [];
+
+// getBlocksScientists.forEach((block) => {
+//   blocks.push(block.dataset.block);
+// });
+
+// console.log(blocks[0]);
+
+const scientists = [
+  {
+    name: "Albert",
+    surname: "Einstein",
+    born: 1879,
+    dead: 1955,
+    id: 1,
+  },
+  {
+    name: "Isaac",
+    surname: "Newton",
+    born: 1643,
+    dead: 1727,
+    id: 2,
+  },
+  {
+    name: "Galileo",
+    surname: "Galilei",
+    born: 1564,
+    dead: 1642,
+    id: 3,
+  },
+  {
+    name: "Marie",
+    surname: "Curie",
+    born: 1867,
+    dead: 1934,
+    id: 4,
+  },
+  {
+    name: "Johannes",
+    surname: "Kepler",
+    born: 1571,
+    dead: 1630,
+    id: 5,
+  },
+  {
+    name: "Nicolaus",
+    surname: "Copernicus",
+    born: 1473,
+    dead: 1543,
+    id: 6,
+  },
+  {
+    name: "Max",
+    surname: "Planck",
+    born: 1858,
+    dead: 1947,
+    id: 7,
+  },
+  {
+    name: "Katherine",
+    surname: "Blodgett",
+    born: 1898,
+    dead: 1979,
+    id: 8,
+  },
+  {
+    name: "Ada",
+    surname: "Lovelace",
+    born: 1815,
+    dead: 1852,
+    id: 9,
+  },
+  {
+    name: "Sarah E.",
+    surname: "Goode",
+    born: 1855,
+    dead: 1905,
+    id: 10,
+  },
+  {
+    name: "Lise",
+    surname: "Meitner",
+    born: 1878,
+    dead: 1968,
+    id: 11,
+  },
+  {
+    name: "Hanna",
+    surname: "Hammarström",
+    born: 1829,
+    dead: 1909,
+    id: 12,
+  },
+];
+
+getButtonsScientists.childNodes.forEach((element) => {
+  element.addEventListener(
+    "click",
+    (e) => {
+      if (e.target.tagName !== "BUTTON") {
+        return;
+      }
+
+      if (e.target.dataset.sci === "btn5") {
+        getBlocksScientists[0].classList.add("btnResultSci");
+      }
+
+      if (e.target.dataset.sci === "btn1") {
+      }
     }
-  });
-  console.log(element.classList.contains("active"));
+    // console.log(e.target.dataset.sci);
+  );
 });
+
+// scientists.map((elem) => {
+//   console.log(elem.born);
+// });

@@ -10,6 +10,11 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
@@ -280,19 +285,18 @@
       <!-- Our Team -->
       <section class="team-section">
         <hr class="main-line" />
-        <div class="container team__container">
+        <div class="container team__container swiper">
           <h4 class="team__title">Наша команда</h4>
-          <div class="team__controls">
+          <div class="team__controls swiper-wrapper">
             <button class="team-class-delete-background">
               <img
                 src="./images/arrow-left.png"
                 alt=""
-                class="team-arrows"
-                data-left="arr-left"
+                class="team-arrows swiper-button-prev"
               />
             </button>
             <div class="team__list">
-              <div class="team__manager">
+              <div class="team__manager swiper-slide">
                 <img
                   src="./employers-images/manager-photo1.webp"
                   alt=""
@@ -301,7 +305,7 @@
                 <p class="team__name-manager1 team__name">Rob Willson</p>
                 <p class="team__work team__work-manager1">Director</p>
               </div>
-              <div class="team__manager">
+              <div class="team__manager swiper-slide">
                 <img
                   src="./employers-images/manager-photo2.jpg"
                   alt=""
@@ -315,7 +319,7 @@
                   Worker
                 </p>
               </div>
-              <div class="team__manager">
+              <div class="team__manager swiper-slide">
                 <img
                   src="./employers-images/manager-photo3.webp"
                   alt=""
@@ -329,7 +333,7 @@
                   Worker
                 </p>
               </div>
-              <div class="team__manager">
+              <div class="team__manager swiper-slide">
                 <img
                   src="./employers-images/manager-photo4.webp"
                   alt=""
@@ -343,7 +347,7 @@
                   Photographer
                 </p>
               </div>
-              <div class="team__manager">
+              <div class="team__manager swiper-slide">
                 <img
                   src="./employers-images/manager-photo5.jpg"
                   alt=""
@@ -363,17 +367,16 @@
               <img
                 src="./images/arrow-right.png"
                 alt=""
-                class="team-arrows"
-                data-right="arr-right"
+                class="team-arrows swiper-button-next"
               />
             </button>
           </div>
-          <div class="team__slider">
-            <button class="team__slider-button active" data-btn="btn1"></button>
-            <button class="team__slider-button" data-btn="btn2"></button>
-            <button class="team__slider-button" data-btn="btn3"></button>
-            <button class="team__slider-button" data-btn="btn4"></button>
-            <button class="team__slider-button" data-btn="btn5"></button>
+          <div class="team__slider swiper-pagination">
+            <button class="team__slider-button"></button>
+            <button class="team__slider-button"></button>
+            <button class="team__slider-button"></button>
+            <button class="team__slider-button"></button>
+            <button class="team__slider-button"></button>
           </div>
         </div>
       </section>
@@ -386,15 +389,15 @@
           <ul class="scientists__list">
             <li class="scientists__item-list">
               <ul class="scientists__item-section">
-                <li class="scientists__item">
+                <li class="scientists__item" data-block="block1">
                   <p class="scientists-name">Albert Einstein</p>
                   <p class="scientists-dob">1879-1955</p>
                 </li>
-                <li class="scientists__item">
+                <li class="scientists__item" data-block="block2">
                   <p class="scientists-name">Isaac Newton</p>
                   <p class="scientists-dob">1643-1727</p>
                 </li>
-                <li class="scientists__item">
+                <li class="scientists__item" data-block="block3">
                   <p class="scientists-name">Galileo Galilei</p>
                   <p class="scientists-dob">1564-1642</p>
                 </li>
@@ -402,15 +405,15 @@
             </li>
             <li class="scientists__item-list">
               <ul class="scientists__item-section">
-                <li class="scientists__item">
+                <li class="scientists__item" data-block="block4">
                   <p class="scientists-name">Marie Curie</p>
                   <p class="scientists-dob">1867-1934</p>
                 </li>
-                <li class="scientists__item">
+                <li class="scientists__item" data-block="block5">
                   <p class="scientists-name">Johannes Kepler</p>
                   <p class="scientists-dob">1571-1630</p>
                 </li>
-                <li class="scientists__item">
+                <li class="scientists__item" data-block="block6">
                   <p class="scientists-name">Nicolaus Copernicus</p>
                   <p class="scientists-dob">1473-1543</p>
                 </li>
@@ -418,15 +421,15 @@
             </li>
             <li class="scientists__item-list">
               <ul class="scientists__item-section">
-                <li class="scientists__item">
+                <li class="scientists__item" data-block="block7">
                   <p class="scientists-name">Max Planck</p>
                   <p class="scientists-dob">1858-1947</p>
                 </li>
-                <li class="scientists__item">
+                <li class="scientists__item" data-block="block8">
                   <p class="scientists-name">Katherine Blodgett</p>
                   <p class="scientists-dob">1898-1979</p>
                 </li>
-                <li class="scientists__item">
+                <li class="scientists__item" data-block="block9">
                   <p class="scientists-name">Ada Lovelace</p>
                   <p class="scientists-dob">1815-1852</p>
                 </li>
@@ -434,15 +437,15 @@
             </li>
             <li class="scientists__item-list">
               <ul class="scientists__item-section">
-                <li class="scientists__item">
+                <li class="scientists__item" data-block="block10">
                   <p class="scientists-name">Sarah E. Goode</p>
                   <p class="scientists-dob">1855-1905</p>
                 </li>
-                <li class="scientists__item">
+                <li class="scientists__item" data-block="block11">
                   <p class="scientists-name">Lise Meitner</p>
                   <p class="scientists-dob">1878-1968</p>
                 </li>
-                <li class="scientists__item">
+                <li class="scientists__item" data-block="block12">
                   <p class="scientists-name">Hanna Hammarstrom</p>
                   <p class="scientists-dob">1829-1909</p>
                 </li>
@@ -451,37 +454,37 @@
           </ul>
           <div class="scientists__actions">
             <div class="scientists__group-one">
-              <button class="scientists__button change-size-scientists-one">
+              <button class="scientists__button change-size-scientists-one" data-sci="btn1">
                 Які вчені народилися в 19 ст.
               </button>
-              <button class="scientists__button change-size-scientists-two">
+              <button class="scientists__button change-size-scientists-two" data-sci="btn2">
                 Відсортувати вчених за алфавітом
               </button>
-              <button class="scientists__button change-size-scientists-three">
+              <button class="scientists__button change-size-scientists-three" data-sci="btn3">
                 Відсортувати вчених за кількістю прожитих років
               </button>
 
-              <button class="scientists__button change-size-scientists-four">
+              <button class="scientists__button change-size-scientists-four" data-sci="btn4">
                 Знайти вченого, який народився найпізніше
               </button>
             </div>
             <div class="scientists__group-two">
-              <button class="scientists__button change-size-scientists-five">
+              <button class="scientists__button change-size-scientists-five" data-sci="btn5">
                 Знайти рік народження Albert Einshtein
               </button>
-              <button class="scientists__button change-size-scientists-six">
+              <button class="scientists__button change-size-scientists-six" data-sci="btn6">
                 Знайти вчених, прізвища яких починаються на літеру “С”
               </button>
-              <button class="scientists__button change-size-scientists-seven">
+              <button class="scientists__button change-size-scientists-seven" data-sci="btn7">
                 Видалити всіх вчених, ім’я яких починається на “А”
               </button>
-              <button class="scientists__button change-size-scientists-eight">
+              <button class="scientists__button change-size-scientists-eight" data-sci="btn8">
                 Знайти вченого, який прожив найдовше і вченого, який прожив
                 найменше
               </button>
             </div>
           </div>
-          <button class="scientists__button change-size-scientists-nine">
+          <button class="scientists__button change-size-scientists-nine" data-sci="btn9">
             Знайти вчених, в яких співпадають перші літери імені і прізвища
           </button>
         </div>
@@ -580,6 +583,8 @@
       <svg></svg>
       <svg></svg>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="./index.js"></script>
+    <script src="./swiper.js"></script>
   </body>
 </html>

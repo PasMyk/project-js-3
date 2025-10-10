@@ -438,6 +438,8 @@ button {
   flex-direction: row;
   gap: 328px;
   padding: 36px 0px 20px 0px;
+  justify-content: center;
+  min-width: 0;
 }
 
 .team-arrows {
@@ -811,4 +813,8 @@ button {
   line-height: 100%;
   letter-spacing: 0%;
   text-align: left;
+}
+
+.btnResultSci {
+  background-color: greenyellow;
 }

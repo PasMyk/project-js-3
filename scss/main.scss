@@ -3,6 +3,7 @@
 @use "./container";
 @use "./reset";
 @use "./modal-window";
+@use "./swiper";
 
 .container {
   width: 1090px;
@@ -159,6 +160,8 @@
   flex-direction: row;
   gap: 328px;
   padding: 36px 0px 20px 0px;
+  justify-content: center;
+  min-width: 0;
 }
 
 .team-arrows {
@@ -550,4 +553,8 @@
   line-height: 100%;
   letter-spacing: 0%;
   text-align: left;
+}
+
+.btnResultSci {
+  background-color: greenyellow;
 }
