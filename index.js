@@ -225,17 +225,12 @@ labelInp.addEventListener("input", (e) => {
 
 // scientists
 
-const getButtonsScientists = document.querySelector(".scientists__actions");
-const getBlocksScientists = Array.from(
+const scientistBorn = Array.from(document.querySelectorAll(".scientists-dob"));
+const scientistName = Array.from(document.querySelectorAll(".scientists-name"));
+const listScientists = Array.from(
   document.querySelectorAll(".scientists__item")
 );
-// let blocks = [];
-
-// getBlocksScientists.forEach((block) => {
-//   blocks.push(block.dataset.block);
-// });
-
-// console.log(blocks[0]);
+const getButtonsScientists = document.querySelector(".scientists__actions");
 
 const scientists = [
   {
@@ -325,24 +320,63 @@ const scientists = [
 ];
 
 getButtonsScientists.childNodes.forEach((element) => {
-  element.addEventListener(
-    "click",
-    (e) => {
-      if (e.target.tagName !== "BUTTON") {
-        return;
-      }
+  element.addEventListener("click", (e) => {
+    if (e.target.tagName !== "BUTTON") return;
+    removeBg();
+    if (e.target.dataset.sci === "btn5") {
+      listScientists[0].classList.add("btnResultSci");
+    }
 
-      if (e.target.dataset.sci === "btn5") {
-        getBlocksScientists[0].classList.add("btnResultSci");
-      }
+    if (e.target.dataset.sci === "btn1") {
+      const data = scientistBorn.filter(
+        (item) => Number.parseInt(item.textContent) > 1800
+      );
+      bornNineteenth(data);
+    }
 
-      if (e.target.dataset.sci === "btn1") {
-      }
+    if (e.target.dataset.sci === "btn8") {
+      let dobFilter = scientists.map((elem) => {
+        return elem.dead - elem.born;
+      });
+
+      let sortScientists = dobFilter.filter((elem) => {
+        if (elem === 90) {
+        }
+      });
+      console.log(sortScientists);
+
+      const maxAge = Math.max(...dobFilter);
+      const minAge = Math.min(...dobFilter);
+      console.log(maxAge, minAge);
     }
     // console.log(e.target.dataset.sci);
-  );
+    if (e.target.dataset.sci === "btn7") {
+      const sortbyFirstLetter = scientists.filter(
+        (word) => word.name[0] === "A"
+      );
+
+      removeBg(sortbyFirstLetter);
+    }
+  });
 });
 
-// scientists.map((elem) => {
-//   console.log(elem.born);
-// });
+function bornNineteenth(scientist) {
+  scientist.forEach((elem) => {
+    const parentScientist = elem.closest(".scientists__item");
+    parentScientist.classList.add("btnResultSci");
+    console.log(parentScientist);
+  });
+  console.log(scientist);
+}
+
+function removeBg() {
+  listScientists.forEach((elem) => {
+    elem.classList.remove("btnResultSci");
+  });
+}
+
+function removeScientist(sortbyFirstLetter) {
+  sortbyFirstLetter.forEach((elem) => {
+    elem.classList.add("btnNegativeResultSci");
+  });
+}
