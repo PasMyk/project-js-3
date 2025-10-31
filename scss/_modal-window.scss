@@ -37,24 +37,125 @@
   font-weight: 400;
   line-height: 100%;
   letter-spacing: 0%;
+  width: 392px;
+  height: 60px;
+  text-align: center;
 }
 
 .hero {
   border-radius: 20px;
   background: rgba(255, 255, 255, 1);
+  background-color: antiquewhite;
+  width: 576px;
+  height: 316px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  position: fixed;
+  top: 150px;
+  right: 470px;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center; /* см. ниже */
+  align-items: center;
+  z-index: 99;
+  /* Чтобы окно не прилипало к границе
+    браузера установим отступы */
+  padding: 30px 0;
+}
+
+.hero__btnClose {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.animationModal {
+  opacity: 0; 
+  transition-duration: 250ms;
+  transition-timing-function: linear;
+  transition-property: all;
+}
+
+.animationEndModal {
+  opacity: 1;
+}
+
+.subscribe {
+  position: fixed;
+  top: 180px;
+  right: 530px;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center; /* см. ниже */
+  align-items: center;
+  z-index: 99;
+  /* Чтобы окно не прилипало к границе
+    браузера установим отступы */
+  padding: 30px 0;
 }
 
 .hero__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero__form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+.hero__tePh {
+  display: flex;
+  gap: 165px;
+}
+
+.hero__btnPh {
+  display: flex;
+  gap: 120px;
+}
+
+.hero__btnClose {
+  background-color: inherit;
+  padding: 0px 0px 40px 480px;
+}
+
+// subscribe
+
+.subscribe {
+  width: 463px;
+  height: 245px;
+  background-color: bisque;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 38px;
+}
+
+.subscribe__Ph1 {
+  display: flex;
+  gap: 65px;
+  align-items: center;
+}
+
+.subscribe__Ph2 {
+  display: flex;
+  gap: 230px;
+}
+
+.subscribe__closeBtn {
+  padding: 0px 0px 0px 360px;
 }

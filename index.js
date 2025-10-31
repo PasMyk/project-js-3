@@ -1,3 +1,5 @@
+import Swiper from "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs";
+
 // Year o Birth
 
 let getYearOfBirth = document.querySelector("#game-yob");
@@ -161,12 +163,53 @@ console.log(calcTime(getInputCalcTime.value));
 
 // football
 
-const getFootballBall = document.querySelector(".football-object");
-const getFootballField = document.querySelector(".game__field");
+const ball = document.querySelector(".football-object");
+const field = document.querySelector(".game__field");
 
-getFootballField.addEventListener("mousemove", (e) => {
-  let pos = e.offsetX;
-});
+let isDragging = false;
+let shiftX, shiftY;
+
+ball.addEventListener("mousedown", onMouseDown);
+
+function onMouseDown(event) {
+  isDragging = true;
+  ball.style.cursor = "grabbing";
+
+  shiftX = event.clientX - ball.getBoundingClientRect().left;
+  shiftY = event.clientY - ball.getBoundingClientRect().top;
+
+  document.addEventListener("mousemove", onMouseMove);
+  document.addEventListener("mouseup", onMouseUp);
+}
+
+function onMouseMove(event) {
+  if (!isDragging) return;
+
+  const fieldRect = field.getBoundingClientRect();
+
+  let newLeft = event.clientX - fieldRect.left - shiftX;
+  let newTop = event.clientY - fieldRect.top - shiftY;
+
+  const rightEdge = field.clientWidth - ball.offsetWidth;
+  const bottomEdge = field.clientHeight - ball.offsetHeight;
+
+  if (newLeft < 0) newLeft = 0;
+  if (newTop < 0) newTop = 0;
+  if (newLeft > rightEdge) newLeft = rightEdge;
+  if (newTop > bottomEdge) newTop = bottomEdge;
+
+  ball.style.left = newLeft + "px";
+  ball.style.top = newTop + "px";
+}
+
+function onMouseUp() {
+  isDragging = false;
+  ball.style.cursor = "grab";
+  document.removeEventListener("mousemove", onMouseMove);
+  document.removeEventListener("mouseup", onMouseUp);
+}
+
+ball.ondragstart = () => false;
 
 // biggest number
 
@@ -200,29 +243,6 @@ labelInp.addEventListener("input", (e) => {
   getMaxNumResult.textContent = Math.max(num1, num2, num3);
 });
 
-// team
-
-// const getWorkersTeam = Array.from(document.querySelectorAll(".team__names"));
-// const getWorkersTitleTeam = Array.from(
-//   document.querySelectorAll(".team__work")
-// );
-// const getBtnTeam = Array.from(
-//   document.querySelectorAll(".team__slider-button")
-// );
-// const getWorkersPhotoTeam = Array.from(
-//   document.querySelectorAll(".team__photo")
-// );
-// const getArrowsTeam = Array.from(document.querySelectorAll(".team-arrows"));
-// let imagesIndexTeam = 0;
-
-// getBtnTeam.forEach((element) => {
-//   element.addEventListener("click", (e) => {
-//     if (element.classList.contains("active")) {
-//     }
-//   });
-//   console.log(element.classList.contains("active"));
-// });
-
 // scientists
 
 const scientistBorn = Array.from(document.querySelectorAll(".scientists-dob"));
@@ -231,6 +251,7 @@ const listScientists = Array.from(
   document.querySelectorAll(".scientists__item")
 );
 const getButtonsScientists = document.querySelector(".scientists__actions");
+const getLastButtonSci = document.querySelector('[data-sci="btn9"]');
 
 const scientists = [
   {
@@ -335,48 +356,202 @@ getButtonsScientists.childNodes.forEach((element) => {
     }
 
     if (e.target.dataset.sci === "btn8") {
-      let dobFilter = scientists.map((elem) => {
-        return elem.dead - elem.born;
-      });
+      const longestLived = scientists.reduce((acc, elem) => {
+        const accAge = acc.dead - acc.born;
+        const elemAge = elem.dead - elem.born;
 
-      let sortScientists = dobFilter.filter((elem) => {
-        if (elem === 90) {
+        if (elemAge > accAge) {
+          return elem;
+        } else {
+          return acc;
+        }
+      }, scientists[0]);
+
+      let sciCheckingMax = scientistName.forEach((elem) => {
+        if (elem.textContent.includes(longestLived.name)) {
+          const parentScientist = elem.closest(".scientists__item");
+          parentScientist.classList.add("btnResultSci");
         }
       });
-      console.log(sortScientists);
 
-      const maxAge = Math.max(...dobFilter);
-      const minAge = Math.min(...dobFilter);
-      console.log(maxAge, minAge);
+      const minlongestLived = scientists.reduce((acc, elem) => {
+        const accAge = acc.dead - acc.born;
+        const elemAge = elem.dead - elem.born;
+
+        if (elemAge < accAge) {
+          return elem;
+        } else {
+          return acc;
+        }
+      }, scientists[0]);
+
+      let sciCheckingMin = scientistName.forEach((elem) => {
+        if (elem.textContent.includes(minlongestLived.name)) {
+          const parentScientist = elem.closest(".scientists__item");
+          parentScientist.classList.add("btnResultSci");
+        }
+      });
     }
-    // console.log(e.target.dataset.sci);
+
+    if (e.target.dataset.sci === "btn6") {
+      const findFromLiSurname = scientistName.forEach((elem) => {
+        if (elem.textContent.includes("C")) {
+          const parentScientist = elem.closest(".scientists__item");
+          parentScientist.classList.add("btnResultSci");
+        }
+      });
+    }
+
+    if (e.target.dataset.sci === "btn9") {
+      const sameInitials = scientists.filter((scientist) => {
+        const firstLetterName = scientist.name[0].toLowerCase();
+        const firstLetterSurname = scientist.surname[0].toLowerCase();
+        return firstLetterName === firstLetterSurname;
+      });
+
+      sameInitials.forEach((scientist) => {
+        const element = document.querySelector(
+          `[data-block="block${scientist.id}"]`
+        );
+        if (element) {
+          element.classList.add("btnResultSci");
+        }
+      });
+    }
+
     if (e.target.dataset.sci === "btn7") {
-      const sortbyFirstLetter = scientists.filter(
-        (word) => word.name[0] === "A"
-      );
-
-      removeBg(sortbyFirstLetter);
+      const findName = scientistName.map((elem) => {
+        if (elem.textContent[0] === "A") {
+          const parentScientist = elem.closest(".scientists__item");
+          parentScientist.classList.add("btnNegativeResultSci");
+        }
+      });
     }
+
+    if (e.target.dataset.sci === "btn4") {
+      const sortLateSci = scientists.sort((a, b) => a.born - b.born);
+      const latestScientist = sortLateSci[sortLateSci.length - 1];
+      let resultLatestSci = scientistName.forEach((elem) => {
+        if (elem.textContent.includes(latestScientist.name)) {
+          const parentScientist = elem.closest(".scientists__item");
+          parentScientist.classList.add("btnResultSci");
+        }
+      });
+    }
+
+    if (e.target.dataset.sci === "btn2") {
+      const sortByFirstLetter = scientists.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+      });
+
+      listScientists.forEach((card) => {
+        card.style.backgroundColor = "";
+      });
+
+      sortByFirstLetter.forEach((sci, index) => {
+        const percent = index / (sortByFirstLetter.length - 1);
+
+        const r = Math.round(255 * percent);
+        const g = Math.round(255 * (1 - percent));
+        const color = `rgba(${r}, ${g}, 0, 0.32)`;
+
+        const card = listScientists.find((el) =>
+          el.querySelector(".scientists-name").textContent.includes(sci.surname)
+        );
+
+        if (card) card.style.backgroundColor = color;
+      });
+
+      console.log(sortByFirstLetter);
+    }
+
+    if (e.target.dataset.sci === "btn3") {
+      const sortAge = scientists.sort((a, b) => {
+        const ageA = a.dead - a.born;
+        const ageB = b.dead - b.born;
+        return ageB - ageA;
+      });
+
+      listScientists.forEach((card) => {
+        card.style.backgroundColor = "";
+      });
+
+      // Покрасим по возрасту (дольше жившие — зеленее)
+      sortAge.forEach((sci, index) => {
+        const percent = index / (sortAge.length - 1);
+        const r = Math.round(255 * percent);
+        const g = Math.round(255 * (1 - percent));
+        const color = `rgba(${r}, ${g}, 0, 0.3)`;
+
+        const card = listScientists.find((el) =>
+          el.querySelector(".scientists-name").textContent.includes(sci.surname)
+        );
+
+        if (card) card.style.backgroundColor = color;
+      });
+
+      console.log(sortAge);
+    }
+
+    console.log(e.target.dataset.sci);
   });
 });
+
+console.log(listScientists.dataset);
 
 function bornNineteenth(scientist) {
   scientist.forEach((elem) => {
     const parentScientist = elem.closest(".scientists__item");
     parentScientist.classList.add("btnResultSci");
-    console.log(parentScientist);
   });
-  console.log(scientist);
 }
 
 function removeBg() {
   listScientists.forEach((elem) => {
-    elem.classList.remove("btnResultSci");
+    elem.classList.remove("btnResultSci", "btnNegativeResultSci");
   });
 }
 
-function removeScientist(sortbyFirstLetter) {
-  sortbyFirstLetter.forEach((elem) => {
-    elem.classList.add("btnNegativeResultSci");
+function removeScientist(deleteColour) {
+  deleteColour.forEach((elem) => {
+    const parentScientist = elem.closest(".scientists__item");
+    parentScientist.classList.add("btnNegativeResultSci");
   });
 }
+
+// swiper
+
+new Swiper(".swiper", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
+// header-dropdown
+
+const dropdownArr = document.querySelector(".dropdown-arrow");
+const dropdownMenu = document.querySelector(".dropdown-menu");
+
+dropdownArr.addEventListener("click", (e) => {
+  dropdownMenu.classList.toggle("show");
+});
+
+// modal-window
+
+const modalWindowNew = document.querySelector(".hero");
+const modalBtnClose = document.querySelector(".hero__btnClose");
+
+window.addEventListener("load", () => {
+  modalWindowNew.style.display = "block";
+  modalWindowNew.classList.add("animationEndModal");
+});
+
+modalBtnClose.addEventListener("click", (e) => {
+  modalWindowNew.style.display = "none";
+});

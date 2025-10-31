@@ -173,14 +173,14 @@
   background-color: white;
 }
 
-.team__slider-button {
+.swiper-pagination-bullet {
   border-radius: 3px;
   height: 3px;
   background-color: #d9d9d9;
   width: 18px;
 }
 
-.team__slider-button:hover {
+.swiper-pagination-bullet:hover {
   transition-timing-function: linear;
   transition-duration: 250ms;
   transition-property: width, color;
@@ -202,6 +202,11 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+
+.team__container {
+  display: flex;
+  flex-direction: column;
 }
 
 // main styles, flex, boarders and e.t.c
@@ -561,4 +566,32 @@
 
 .btnNegativeResultSci {
   background-color: red;
+}
+
+// change place
+
+// [data-sci="btn9"] {
+// }
+
+// swiper styles
+
+.swiper {
+  width: 600px;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  padding: 36px 0px 36px 0px;
+}
+
+.swiper-wrapper {
+  padding: 0px 0px 36px 0px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: black;
+
+  width: 50px;
+  height: 100px;
+  transform: rotate(-180deg);
 }

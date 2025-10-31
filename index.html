@@ -14,7 +14,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
-
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
@@ -34,10 +33,18 @@
                   />
                 </button>
               </div>
-              <ul class="dropdown-menu" style="display: none">
-                <li class="dropdown-item">Числовий</li>
-                <li class="dropdown-item">Ігровий</li>
-                <li class="dropdown-item">Ознайомчий</li>
+              <ul class="dropdown-menu show">
+                <li class="dropdown-item">
+                  <button class="dropdown-btn" n>Числовий</button>
+                </li>
+                <li class="dropdown-item">
+                  <button class="dropdown-btn">Ігровий</button>
+                </li>
+                <li class="dropdown-item dropdown-item-lastObj">
+                  <button class="dropdown-btn dropdown-lastObj">
+                    Ознайомчий
+                  </button>
+                </li>
               </ul>
             </li>
             <li class="nav-item">Наша команда</li>
@@ -285,18 +292,11 @@
       <!-- Our Team -->
       <section class="team-section">
         <hr class="main-line" />
-        <div class="container team__container swiper">
+        <div class="container team__container">
           <h4 class="team__title">Наша команда</h4>
-          <div class="team__controls swiper-wrapper">
-            <button class="team-class-delete-background">
-              <img
-                src="./images/arrow-left.png"
-                alt=""
-                class="team-arrows swiper-button-prev"
-              />
-            </button>
-            <div class="team__list">
-              <div class="team__manager swiper-slide">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide team__manager">
                 <img
                   src="./employers-images/manager-photo1.webp"
                   alt=""
@@ -305,78 +305,52 @@
                 <p class="team__name-manager1 team__name">Rob Willson</p>
                 <p class="team__work team__work-manager1">Director</p>
               </div>
-              <div class="team__manager swiper-slide">
+              <div class="swiper-slide team__manager">
                 <img
                   src="./employers-images/manager-photo2.jpg"
                   alt=""
                   class="team__photo"
-                  style="display: none"
                 />
-                <p class="team__name-magaer2 team__name" style="display: none">
-                  Darrel Cquit
-                </p>
-                <p class="team__work team__work-manager2" style="display: none">
-                  Worker
-                </p>
+                <p class="team__name-magaer2 team__name">Darrel Cquit</p>
+                <p class="team__work team__work-manager2">Worker</p>
               </div>
-              <div class="team__manager swiper-slide">
+              <div class="swiper-slide team__manager">
                 <img
                   src="./employers-images/manager-photo3.webp"
                   alt=""
                   class="team__photo"
-                  style="display: none"
                 />
-                <p class="team__name-magaer3 team__name" style="display: none">
-                  Mike Harreson
-                </p>
-                <p class="team__work team__work-manager3" style="display: none">
-                  Worker
-                </p>
+                <p class="team__name-magaer3 team__name">Mike Harreson</p>
+                <p class="team__work team__work-manager3">Worker</p>
               </div>
-              <div class="team__manager swiper-slide">
+              <div class="swiper-slide team__manager">
                 <img
                   src="./employers-images/manager-photo4.webp"
                   alt=""
                   class="team__photo"
-                  style="display: none"
                 />
-                <p class="team__name-magaer4 team__name" style="display: none">
-                  Gorge Tail
-                </p>
-                <p class="team__work team__work-manager4" style="display: none">
-                  Photographer
-                </p>
+                <p class="team__name-magaer4 team__name">Gorge Tail</p>
+                <p class="team__work team__work-manager4">Photographer</p>
               </div>
-              <div class="team__manager swiper-slide">
+              <div class="swiper-slide team__manager">
                 <img
                   src="./employers-images/manager-photo5.jpg"
                   alt=""
                   class="team__photo"
-                  style="display: none"
                 />
-                <p class="team__name-magaer5 team__name" style="display: none">
-                  Rob Smith
-                </p>
-                <p class="team__work team__work-manager5" style="display: none">
-                  Designer
-                </p>
+                <p class="team__name-magaer5 team__name">Rob Smith</p>
+                <p class="team__work team__work-manager5">Designer</p>
               </div>
             </div>
 
-            <button class="team-class-delete-background">
-              <img
-                src="./images/arrow-right.png"
-                alt=""
-                class="team-arrows swiper-button-next"
-              />
-            </button>
-          </div>
-          <div class="team__slider swiper-pagination">
-            <button class="team__slider-button"></button>
-            <button class="team__slider-button"></button>
-            <button class="team__slider-button"></button>
-            <button class="team__slider-button"></button>
-            <button class="team__slider-button"></button>
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-prev">
+              <img src="./images/arrow-right.png" alt="" />
+            </div>
+            <div class="swiper-button-next">
+              <img src="./images/arrow-left.png" alt="" />
+            </div>
           </div>
         </div>
       </section>
@@ -454,39 +428,66 @@
           </ul>
           <div class="scientists__actions">
             <div class="scientists__group-one">
-              <button class="scientists__button change-size-scientists-one" data-sci="btn1">
+              <button
+                class="scientists__button change-size-scientists-one"
+                data-sci="btn1"
+              >
                 Які вчені народилися в 19 ст.
               </button>
-              <button class="scientists__button change-size-scientists-two" data-sci="btn2">
+              <button
+                class="scientists__button change-size-scientists-two"
+                data-sci="btn2"
+              >
                 Відсортувати вчених за алфавітом
               </button>
-              <button class="scientists__button change-size-scientists-three" data-sci="btn3">
+              <button
+                class="scientists__button change-size-scientists-three"
+                data-sci="btn3"
+              >
                 Відсортувати вчених за кількістю прожитих років
               </button>
 
-              <button class="scientists__button change-size-scientists-four" data-sci="btn4">
+              <button
+                class="scientists__button change-size-scientists-four"
+                data-sci="btn4"
+              >
                 Знайти вченого, який народився найпізніше
               </button>
             </div>
             <div class="scientists__group-two">
-              <button class="scientists__button change-size-scientists-five" data-sci="btn5">
+              <button
+                class="scientists__button change-size-scientists-five"
+                data-sci="btn5"
+              >
                 Знайти рік народження Albert Einshtein
               </button>
-              <button class="scientists__button change-size-scientists-six" data-sci="btn6">
+              <button
+                class="scientists__button change-size-scientists-six"
+                data-sci="btn6"
+              >
                 Знайти вчених, прізвища яких починаються на літеру “С”
               </button>
-              <button class="scientists__button change-size-scientists-seven" data-sci="btn7">
+              <button
+                class="scientists__button change-size-scientists-seven"
+                data-sci="btn7"
+              >
                 Видалити всіх вчених, ім’я яких починається на “А”
               </button>
-              <button class="scientists__button change-size-scientists-eight" data-sci="btn8">
+              <button
+                class="scientists__button change-size-scientists-eight"
+                data-sci="btn8"
+              >
                 Знайти вченого, який прожив найдовше і вченого, який прожив
                 найменше
               </button>
+              <button
+                class="scientists__button change-size-scientists-nine"
+                data-sci="btn9"
+              >
+                Знайти вчених, в яких співпадають перші літери імені і прізвища
+              </button>
             </div>
           </div>
-          <button class="scientists__button change-size-scientists-nine" data-sci="btn9">
-            Знайти вчених, в яких співпадають перші літери імені і прізвища
-          </button>
         </div>
       </section>
     </main>
@@ -523,10 +524,11 @@
         </div>
       </div>
     </footer>
-    <div class="hero" style="display: none">
-      <svg class="hero__ornament hero__ornament--left" aria-hidden="true"></svg>
-
+    <div class="hero animationModal" style="display: none">
       <div class="hero__content">
+        <button class="hero__btnClose">
+          <img src="./images/close.png" alt="" class="hero__closeImg" />
+        </button>
         <p class="hero__welcome">
           Привіт! Ви потрапили на сайт інтерактивних ігор та завдань. Надіємось,
           що вам сподобається і ви отримаєте позитивні емоції! Бажаємо Вам гарно
@@ -534,7 +536,11 @@
         </p>
 
         <form class="hero__form" action="">
-          <p class="hero__prompt">Введіть своє ім’я:</p>
+          <div class="hero__tePh">
+            <img src="./images/sword.png" alt="" />
+            <p class="hero__prompt">Введіть своє ім’я:</p>
+            <img src="./images/game-development.png" alt="" />
+          </div>
           <label class="hero__label" for="player-name">
             <input
               id="player-name"
@@ -545,46 +551,31 @@
               placeholder="Ваше ім'я"
             />
           </label>
-
-          <button class="hero__button" type="submit">Зберегти</button>
+          <div class="hero__btnPh">
+            <img src="./images/puzzle.png" alt="" />
+            <button class="hero__button" type="submit">Зберегти</button>
+            <img src="./images/tic-tac-toe.png" alt="" />
+          </div>
         </form>
       </div>
 
-      <svg
-        class="hero__ornament hero__ornament--1"
-        aria-hidden="true"
-        width="30px"
-        height="30px"
-      ></svg>
-      <svg
-        class="hero__ornament hero__ornament--2"
-        aria-hidden="true"
-        width="30px"
-        height="30px"
-      ></svg>
-      <svg
-        class="hero__ornament hero__ornament--3"
-        aria-hidden="true"
-        width="30px"
-        height="30px"
-      ></svg>
-      <svg
-        class="hero__ornament hero__ornament--right"
-        aria-hidden="true"
-        width="30px"
-        height="30px"
-      ></svg>
+      <img src="" alt="" />
     </div>
 
-    <div style="display: none">
-      <p>Дякую за підписку!</p>
-      <svg></svg>
-      <svg></svg>
-      <svg></svg>
-      <svg></svg>
+    <div class="subscribe" style="display: none">
+      <img src="./images/close.png" alt="" class="subscribe__closeBtn" />
+      <div class="subscribe__Ph1">
+        <img src="./images/sword.png" alt="" />
+        <p>Дякую за підписку!</p>
+        <img src="./images/game-development.png" alt="" />
+      </div>
+      <div class="subscribe__Ph2">
+        <img src="./images/puzzle.png" alt="" />
+        <img src="./images/tic-tac-toe.png" alt="" />
+      </div>
     </div>
+    <script type="module" src="./index.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="./index.js"></script>
-    <script src="./swiper.js"></script>
   </body>
 </html>
