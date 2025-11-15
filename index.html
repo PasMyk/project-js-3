@@ -52,9 +52,6 @@
           </ul>
         </div>
         <div class="header-right">
-          <!-- <svg class="user-icon" width="40px" height="20px">
-            <use href="/switcher.svg#icon-switcher"></use>
-          </svg> -->
           <p class="welcome-text">
             Вітаємо, <span class="username">User!</span>
           </p>
@@ -78,9 +75,7 @@
                 placeholder="Введіть рік народження"
               />
               <button class="game__button" id="button-yob">
-                <svg width="15px" height="15px" class="upload-icon">
-                  <use href="/symbol-defs.svg#icon-upload"></use>
-                </svg>
+                <img src="./images/find.png" alt="" />
               </button>
             </label>
             <p class="game__result" id="result-yob"></p>
@@ -102,9 +97,7 @@
                 placeholder="Введіть число"
               />
               <button class="game__button" id="button-gtn">
-                <svg width="15px" height="15px">
-                  <use href="/symbol-defs.svg#icon-upload"></use>
-                </svg>
+                <img src="./images/find.png" alt="" />
               </button>
             </label>
             <div class="game-guess-number-result-content">
@@ -228,12 +221,9 @@
                 placeholder="Введіть число"
               />
               <button class="game__button game__timeCalc-button">
-                <svg width="15px" height="15px">
-                  <use href="/symbol-defs.svg#icon-upload"></use>
-                </svg>
+                <img src="./images/find.png" alt="" />
               </button>
             </label>
-            <svg class="time__icon" width="100px" height="0px"></svg>
             <p class="game__result game__result-CalcTime">3 дн. 15:45:01</p>
           </div>
         </div>
@@ -524,58 +514,49 @@
         </div>
       </div>
     </footer>
-    <div class="hero animationModal" style="display: none">
-      <div class="hero__content">
-        <button class="hero__btnClose">
-          <img src="./images/close.png" alt="" class="hero__closeImg" />
+    <div class="overlay">
+      <div class="hero animationModal">
+        <div class="hero__content">
+          <button class="hero__btnClose">
+            <img src="./images/close.png" alt="" class="hero__closeImg" />
+          </button>
+          <p class="hero__welcome">
+            Привіт! Ви потрапили на сайт інтерактивних ігор та завдань.
+            Надіємось, що вам сподобається і ви отримаєте позитивні емоції!
+            Бажаємо Вам гарно провести час!
+          </p>
+
+          <form class="hero__form" action="">
+            <div class="hero__tePh">
+              <p class="hero__prompt">Введіть своє ім’я:</p>
+            </div>
+            <label class="hero__label" for="player-name">
+              <input
+                id="player-name"
+                class="hero__input"
+                type="text"
+                placeholder="Ваше ім'я"
+              />
+            </label>
+            <div class="hero__btnPh">
+              <button class="hero__button">Зберегти</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="subscribe animationModalSubscribe">
+        <button class="subscribe__btn">
+          <img src="./images/close.png" alt="" class="subscribe__closeBtn" />
         </button>
-        <p class="hero__welcome">
-          Привіт! Ви потрапили на сайт інтерактивних ігор та завдань. Надіємось,
-          що вам сподобається і ви отримаєте позитивні емоції! Бажаємо Вам гарно
-          провести час!
-        </p>
-
-        <form class="hero__form" action="">
-          <div class="hero__tePh">
-            <img src="./images/sword.png" alt="" />
-            <p class="hero__prompt">Введіть своє ім’я:</p>
-            <img src="./images/game-development.png" alt="" />
-          </div>
-          <label class="hero__label" for="player-name">
-            <input
-              id="player-name"
-              class="hero__input"
-              type="text"
-              name="playerName"
-              aria-label="Ім'я гравця"
-              placeholder="Ваше ім'я"
-            />
-          </label>
-          <div class="hero__btnPh">
-            <img src="./images/puzzle.png" alt="" />
-            <button class="hero__button" type="submit">Зберегти</button>
-            <img src="./images/tic-tac-toe.png" alt="" />
-          </div>
-        </form>
-      </div>
-
-      <img src="" alt="" />
-    </div>
-
-    <div class="subscribe" style="display: none">
-      <img src="./images/close.png" alt="" class="subscribe__closeBtn" />
-      <div class="subscribe__Ph1">
-        <img src="./images/sword.png" alt="" />
-        <p>Дякую за підписку!</p>
-        <img src="./images/game-development.png" alt="" />
-      </div>
-      <div class="subscribe__Ph2">
-        <img src="./images/puzzle.png" alt="" />
-        <img src="./images/tic-tac-toe.png" alt="" />
+        <div class="subscribe__Ph1">
+          <p>Дякую за підписку!</p>
+        </div>
+        <div class="subscribe__Ph2"></div>
       </div>
     </div>
+
     <script type="module" src="./index.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   </body>
 </html>

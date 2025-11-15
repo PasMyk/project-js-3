@@ -546,12 +546,39 @@ dropdownArr.addEventListener("click", (e) => {
 
 const modalWindowNew = document.querySelector(".hero");
 const modalBtnClose = document.querySelector(".hero__btnClose");
+const modalSubscribe = document.querySelector(".subscribe");
+const modalSubscribeBtnClose = document.querySelector(".subscribe__btn");
+const welcomeUser = document.querySelector(".username");
+const modalButtonGetName = document.querySelector(".hero__button");
+const modalInput = document.querySelector(".hero__input");
+const modalForm = document.querySelector(".hero__form");
+const blackBackground = document.querySelector(".overlay");
 
 window.addEventListener("load", () => {
   modalWindowNew.style.display = "block";
+  modalSubscribe.style.opacity = "0";
   modalWindowNew.classList.add("animationEndModal");
 });
 
-modalBtnClose.addEventListener("click", (e) => {
+modalBtnClose.addEventListener("click", () => {
+  modalSubscribe.style.position = "fixed";
+  modalSubscribe.style.opacity = "1";
   modalWindowNew.style.display = "none";
+});
+
+modalSubscribeBtnClose.addEventListener("click", () => {
+  modalSubscribe.style.display = "none";
+  blackBackground.remove();
+});
+
+modalForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  welcomeUser.textContent = modalInput.value;
+  modalWindowNew.style.display = "block";
+  modalWindowNew.classList.add("animationEndModal");
+  if (modalWindowNew.style.display === "block") {
+    modalWindowNew.style.display = "none";
+    modalSubscribe.style.position = "fixed";
+    modalSubscribe.style.opacity = "1";
+  }
 });

@@ -5,6 +5,20 @@
 @use "./modal-window";
 @use "./swiper";
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* ← тёмный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* поверх всего */
+  pointer-events: auto; /* ловит клики */
+}
+
 .container {
   width: 1090px;
   margin: 0 auto;
